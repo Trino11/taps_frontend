@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+}
+
+.svgFilterWhite{
+    filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(310deg) brightness(103%) contrast(104%);
+}
+
+body {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.color-trans{
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    height: calc(100% - 35px - env(safe-area-inset-bottom));
+}
+
+a {
+    text-decoration: none;
+}

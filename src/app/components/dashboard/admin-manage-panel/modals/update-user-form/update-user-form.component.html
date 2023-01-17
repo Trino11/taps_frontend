@@ -1,0 +1,19 @@
+<div class="fixed left-0 top-0 overflow-auto z-0 p-20 w-full h-full bg-opacity-60 bg-black opacity-animated">
+    <form (submit)="updateUser(username, password)"
+        class="border-2 rounded-xl p-5 w-fit m-auto h-fit dark:bg-backgroundDT bg-backgroundT">
+        <p class="text-center pb-2">{{user.uid}}, {{user.username}}</p>
+        <div class="grid grid-cols-2 grid-rows-2">
+
+            <label for="newUsername" class="block my-2 pr-2 text-right">New username</label>
+            <input type="text" class="block my-2 pl-2 text-letterT" id="newUsername" #username>
+
+            <label for="newPassword" class="block my-2 pr-2 text-right">New password</label>
+            <input type="password" class="block my-2 pl-2 text-letterT" id="newPassword" #password>
+
+        </div>
+        <div class="flex justify-between">
+            <button (click)="closeModal()">Close Form</button>
+            <button type="submit" class="">Update User</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div
+    class="flex items-center justify-between h-14 p-1 bg-backgroudDarkT text-letterT dark:bg-backgroudDarkDT dark:text-letterDT color-trans">
+    <a class="flex" routerLink="/"><img class=" h-10 w-10"
+            [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png'">
+        <p class="p-2">Trino's Admin Panel</p>
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+    <div class="p-2 object-right ml-3 relative block" id="">
+        <ul class="flex">
+            <li>
+                <a (click)="toggleDarkmode()" class="hover:cursor-pointer">Toggle darkmmode</a>
+            </li>
+            <li class="ml-3 mr-4">
+                <a class="" *ngIf="!logged" [ngClass]="{'active': currentUrl == '/login'}" routerLink="/login">
+                    <p>Login</p>
+                </a>
+                <a class="" *ngIf="logged" routerLink="/dashboard">
+                    <p>Dashboard</p>
+                </a>
+            </li>
+
+        </ul>
+
+        <p class="" *ngIf="status == false">The server is down :(</p>
+    </div>
+</div>

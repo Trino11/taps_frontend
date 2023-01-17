@@ -1,0 +1,7 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="content" [ngSwitch]="page">
+    <h2 *ngSwitchCase="'/dashboard/admin'" style="padding: 20px;">Welcomme to Administration panel, here you can manage users, instances and roles.</h2>
+    <app-admin-users *ngSwitchCase="'/dashboard/admin/users'"></app-admin-users>
+    <app-admin-instances *ngSwitchCase="'/dashboard/admin/instances'"></app-admin-instances>
+    <app-admin-roles *ngSwitchCase="'/dashboard/admin/roles'"></app-admin-roles>
+</div>

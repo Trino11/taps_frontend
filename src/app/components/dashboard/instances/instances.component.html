@@ -1,0 +1,18 @@
+<div class="flex">
+    <!-- sidebar -->
+    <div class="sidebar bg-backgroudDarkT dark:bg-backgroudDarkDT fixed">
+        <app-sidebar *ngIf="response" [instances]="instances"></app-sidebar>
+    </div>
+    <!-- content -->
+    <div class="w-screen h-screen ml-64">
+        <p class="text-6xl pl-4 pt-2 border-b-2">{{instance.name}} - <i>{{instance.tag}}</i></p>
+        <p><button (click)="checkStatus()" class="px-2">Reload</button> {{userList}}</p>
+        <div class="grid grid-cols-4 text-black">
+            <button (click)="start()" class="bg-green-500">Start</button>
+            <button (click)="stop()" class="bg-red-500">Stop</button>
+            <button (click)="restart()" class="bg-yellow-500">Restart</button>
+            <button (click)="asd()" class="bg-red-500">ForceStop</button>
+        </div>
+        <p>{{serverResponse}}</p>
+    </div>
+</div>

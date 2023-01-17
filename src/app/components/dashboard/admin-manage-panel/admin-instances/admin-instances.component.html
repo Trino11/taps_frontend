@@ -1,0 +1,23 @@
+<h1 (click)="activateModalCreatingInstance()" class="text-center border-2 m-4 rounded-xl p-2 bg-pink-400 hover:bg-pink-600 hover:cursor-pointer">CREATE INSTANCE +</h1>
+<div class="m-4 grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-4 h-auto">
+    <div class="py-2 px-4 border-2 rounded-2xl" *ngFor="let instance of instances">
+        <!--card-->
+        <div class="flex justify-between text-2xl h-auto">
+            <ul>
+                <li>{{instance.id}}
+                    {{instance.name}}</li>
+                <li class="italic"> - {{instance.tag}} </li>
+            </ul>
+            <div class="grid grid-cols-1 grid-rows-2 text-center">
+                <a (click)="activateModalUpdatingInstance(instance)" class="bg-blue-500 hover:bg-blue-700 border-2 hover:cursor-pointer rounded-2xl px-1 w-auto">
+                    Update
+                </a>
+                <a (click)="deleteInstance(instance.id, instance.name, instance.tag)" class="bg-red-600 hover:bg-red-800 border-2 hover:cursor-pointer rounded-2xl px-1 w-auto">
+                    Delete
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-create-instance-form *ngIf="creatingInstance == true"></app-create-instance-form>
+<app-update-instance-form *ngIf="updatingInstance == true"></app-update-instance-form>

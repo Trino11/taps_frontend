@@ -1,0 +1,10 @@
+.sidebar-body {
+    overflow-y: auto;
+    height: calc(100% - 70px - 90px - env(safe-area-inset-bottom));
+}
+
+.user-card-admin {
+    position: relative;
+    right: -100px;
+
+}

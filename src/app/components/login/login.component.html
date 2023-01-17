@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="">
+    <div class="">
+        <form (submit)="tryLogin(username, password, remme)">
+            <div class="">
+                <label for="username" class="">Username</label>
+                <input type="text" class="" id="username" #username>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="">Password</label>
+                <input type="password" class="" id="password" #password>
+                <div *ngIf="passFailed" id="passwordError" class="">Username and password do not match.</div>
+            </div>
+            <div class="">
+                <input type="checkbox" class="" id="check" #remme>
+                <label class="" for="check" >Remember me</label>
+            </div>
+            <button type="submit" class="">Login</button>
+        </form>
+    </div>
+</div>

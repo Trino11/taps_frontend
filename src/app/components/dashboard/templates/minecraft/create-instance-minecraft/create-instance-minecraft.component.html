@@ -1,0 +1,62 @@
+<hr class="my-2">
+<form (submit)="saveData(mem, version, launcher, seed, port, rconPort, rconPass)" class="grid grid-cols-2">
+
+    <div>
+        <label for="launcher" class="block my-2 pr-2 text-center">Launcher</label>
+        <select id="launcher" class="block my-2 pl-2 text-letterT text-right " name="tag" [(ngModel)]="launcher">
+            <option value="default">Select one</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Forge">Forge</option>
+            <option value="Fabric">Fabric</option>
+            <option value="Spigot">Spigot</option>
+            <option value="Bukkit">Bukkit</option>
+        </select>
+    </div>
+
+    <div [ngSwitch]="launcher">
+        <label for="version" class="block my-2 pr-2 text-center">Version</label>
+        <p *ngSwitchDefault="">Select a launcher to see available versions</p>
+
+        <!-- <input *ngSwitchCase="'Vanilla'" type="text" class="block my-2 pl-2 text-letterT" id="version"
+            [(ngModel)]="version"> -->
+        <select *ngSwitchCase="'Vanilla'" id="tag" class="block my-2 pl-2 text-letterT" name="tag" [(ngModel)]="version">
+            <option [value]="i" *ngFor="let i of versions.Vanilla">{{i}}</option>
+        </select>
+
+        <p *ngSwitchCase="'Forge'" class="block my-2 pl-2 text-letterT">
+            We can not support lists of forge versions, go to <a class="italic" target=”_blank”
+                href="https://files.minecraftforge.net/net/minecraftforge/forge/">forge download page</a>
+            and search for a minecraft version-forge version, example: 1.19.2-43.1.3
+            <input type="text" class="block my-2 pl-2 text-letterT" id="version" [(ngModel)]="version">
+        </p>
+
+        <select *ngSwitchCase="'Fabric'" id="tag" class="block my-2 pl-2 text-letterT" name="tag" [(ngModel)]="version">
+            <option [value]="i" *ngFor="let i of versions.Fabric">{{i}}</option>
+        </select>
+
+        <select *ngSwitchCase="'Spigot'" id="tag" class="block my-2 pl-2 text-letterT" name="tag" [(ngModel)]="version">
+            <option [value]="i" *ngFor="let i of versions.Spigot">{{i}}</option>
+        </select>
+
+        <select *ngSwitchCase="'Bukkit'" id="tag" class="block my-2 pl-2 text-letterT" name="tag" [(ngModel)]="version">
+            <option [value]="i" *ngFor="let i of versions.Bukkit">{{i}}</option>
+        </select>
+    </div>
+
+    <label for="mem" class="block my-2 pr-2 text-right h-fit">Memory</label>
+    <input type="text" class="block my-2 pl-2 text-letterT h-fit" id="mem" #mem>
+
+    <label for="seed" class="block my-2 pr-2 text-right">Seed</label>
+    <input type="text" class="block my-2 pl-2 text-letterT" id="seed" #seed>
+
+    <label for="port" class="block my-2 pr-2 text-right">Port</label>
+    <input type="text" class="block my-2 pl-2 text-letterT" id="port" #port>
+
+    <label for="rconPort" class="block my-2 pr-2 text-right">Rcon port</label>
+    <input type="text" class="block my-2 pl-2 text-letterT" id="rconPort" #rconPort>
+
+    <label for="rconPass" class="block my-2 pr-2 text-right">Rcon password</label>
+    <input type="text" class="block my-2 pl-2 text-letterT" id="rconPass" #rconPass>
+
+    <button class="w-full border-2 rounded-xl" type="submit">Save</button>
+</form>

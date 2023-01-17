@@ -1,0 +1,17 @@
+<div class="flex">
+    <!-- sidebar -->
+    <div class="sidebar bg-backgroudDarkT dark:bg-backgroudDarkDT fixed">
+        <app-sidebar *ngIf="response" [instances]="instances"></app-sidebar>
+    </div>
+    <!-- content -->
+    <div class="w-screen h-screen ml-64" [ngSwitch]="page">
+        <h1 *ngSwitchCase="'/dashboard'">This is your dashboard</h1>
+        <app-proxy-hass *ngSwitchCase="'/dashboard/hass'"></app-proxy-hass>
+        <app-instances *ngSwitchCase="'/dashboard/instance/'"></app-instances>
+        <app-admin-manage-panel *ngSwitchCase="'/dashboard/admin'"></app-admin-manage-panel>
+        <app-admin-manage-panel *ngSwitchCase="'/dashboard/admin/users'"></app-admin-manage-panel>
+        <app-admin-manage-panel *ngSwitchCase="'/dashboard/admin/instances'"></app-admin-manage-panel>
+        <app-admin-manage-panel *ngSwitchCase="'/dashboard/admin/roles'"></app-admin-manage-panel>
+    </div>
+
+</div>
