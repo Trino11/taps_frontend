@@ -4,7 +4,6 @@ import { ModalsService } from 'src/app/services/modals.service';
 
 @Component({
   selector: 'app-create-instance-form',
-  //template: `User Name: <input type="text" [(ngModel)]="nombre" ><br/>{{nombre}}`,
   templateUrl: './create-instance-form.component.html',
   styleUrls: ['./create-instance-form.component.css']
 })

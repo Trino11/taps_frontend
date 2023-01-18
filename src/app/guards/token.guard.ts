@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TokenGuard implements CanActivate, CanActivateChild {
+  API_URI: string = 'https://localhost:3000/api'
+
   constructor(private cookieService: CookieService, private router: Router, private http: HttpClient) { }
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,7 +18,7 @@ export class TokenGuard implements CanActivate, CanActivateChild {
       this.router.navigate(['/login'])
     }
     else {
-      this.http.get("https://localhost:3000/api/manage/login").subscribe(
+      this.http.get(this.API_URI+"/manage/login").subscribe(
         res => {},
         err => {
           this.router.navigate(['/login'])

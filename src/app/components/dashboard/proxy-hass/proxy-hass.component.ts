@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-proxy-hass',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProxyHassComponent implements OnInit {
 
-  constructor() { }
+  public hassPath:SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.hassPath =  this.sanitizer.bypassSecurityTrustResourceUrl("https://localhost");
+  }
 
   ngOnInit(): void {
   }

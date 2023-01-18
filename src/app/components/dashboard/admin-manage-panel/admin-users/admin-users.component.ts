@@ -16,6 +16,7 @@ export class AdminUsersComponent implements OnInit {
   public subscribingUser: boolean = false
 
   public newToken: any
+  public domain:string = 'http://localhost:4200'
 
   public userW: {} = {}
 

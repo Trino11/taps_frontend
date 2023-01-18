@@ -29,8 +29,12 @@ export class SidebarComponent implements OnInit {
   }
 
   logout() {
-    this.cookieService.deleteAll()//TODO:Delete session en backend?
+    this.cookieService.deleteAll()
     this.router.navigateByUrl('/')
+  }
+
+  notImplemented(){
+    alert("Sorry, this function is not yet implemented.")
   }
 
 }

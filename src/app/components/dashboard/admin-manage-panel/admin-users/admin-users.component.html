@@ -9,7 +9,7 @@
 </div>
 <div *ngIf="newToken" class="text-xl pl-4">
     <button (click)="copyToClipboard(newToken)" class="inline border-2 p-1">Copy</button>
-    <button (click)="copyToClipboard('https://domain/register/'+newToken)" class="inline border-2 p-1">CopyURL</button>
+    <button (click)="copyToClipboard(domain+'/register/'+newToken)" class="inline border-2 p-1">CopyURL</button>
     <p class="pl-2">{{newToken}}</p>
 </div>
 <div class="m-4 grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-4 h-auto">

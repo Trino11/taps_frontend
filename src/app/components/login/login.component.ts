@@ -24,15 +24,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  tryLogin(username: HTMLInputElement, password: HTMLInputElement, remme: HTMLInputElement) {
+  tryLogin(username: HTMLInputElement, password: HTMLInputElement, remme?: HTMLInputElement) {
     this.data.username = username.value
     this.data.password = password.value
     let token: string
     this.loginService.tryLogin(this.data).subscribe(
       res => {
         if (res.msg == "user and pass are correct") {
-          if (remme.value == "on")
-            this.cookieService.set('token', res.token)
+          //if (remme.checked)
+          this.cookieService.set('token', res.token, 7)
           this.router.navigate(['/dashboard'])
         } else if (res.msg == "There was a problem, try again later") {
           this.passFailed = true
@@ -48,6 +48,6 @@ export class LoginComponent implements OnInit {
     )
     return false;
   }
-  
+
 
 }

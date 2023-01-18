@@ -38,12 +38,10 @@ export class NavbarComponent implements OnInit {
     if (dark == 'true') {
       localStorage.setItem('dark', 'false')
       document.documentElement.classList.remove('dark')
-      //this.dark = false
     }
     else {
       localStorage.setItem('dark', 'true')
       document.documentElement.classList.add('dark')
-      //this.dark = true
     }
 
 
